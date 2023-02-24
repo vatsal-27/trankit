@@ -5,8 +5,8 @@ trainer = trankit.TPipeline(
     'category': 'customized', # pipeline category
     'task': 'posdep', # task name
     'save_dir': './save_dir/hd', # directory for saving trained model
-    'train_conllu_fpath': './kannada_train.dat', # annotations file in CONLLU format  for training
-    'dev_conllu_fpath': './kannada_dev.dat', # annotations file in CONLLU format for development
+    'train_conllu_fpath': './dataset/kannada_train.dat', # annotations file in CONLLU format  for training
+    'dev_conllu_fpath': './dataset/kannada_dev.dat', # annotations file in CONLLU format for development
     'max_epoch': 100}
 )
 
@@ -17,8 +17,8 @@ from trankit.iterators.tagger_iterators import TaggerDataset
 
 test_set = TaggerDataset(
     config=trainer._config,
-    input_conllu="./kannada_test.dat",
-    gold_conllu="./kannada_test.dat",
+    input_conllu="./dataset/kannada_test.dat",
+    gold_conllu="./dataset/kannada_test.dat",
     evaluate=True
 )
 test_set.numberize()
@@ -42,8 +42,8 @@ for i in result[0]:
 
 test_set = TaggerDataset(
     config=trainer._config,
-    input_conllu="./kannada_test.dat",
-    gold_conllu="./kannada_test.dat",
+    input_conllu="./dataset/kannada_test.dat",
+    gold_conllu="./dataset/kannada_test.dat",
     evaluate=True
 )
 test_set.numberize()
