@@ -7,10 +7,10 @@ tokenizer = trankit.TPipeline(
     'category': 'customized', # pipeline category
     'task': 'tokenize', # task name
     'save_dir': './save_dir/hd', # directory for saving trained model
-    'train_txt_fpath': './kannada_train.txt', # raw text file
-    'dev_txt_fpath': './kannada_dev.txt', # raw text file
-    'train_conllu_fpath': './kannada_train.dat', # annotations file in CONLLU format  for training
-    'dev_conllu_fpath': './kannada_dev.dat',
+    'train_txt_fpath': './hindi_train.txt', # raw text file
+    'dev_txt_fpath': './hindi_dev.txt', # raw text file
+    'train_conllu_fpath': './hindi_train.dat', # annotations file in CONLLU format  for training
+    'dev_conllu_fpath': './hindi_dev.dat',
     'max_epoch': 10}
 )
 
@@ -22,8 +22,8 @@ lemmatizer = trankit.TPipeline(
     'category': 'customized', # pipeline category
     'task': 'lemmatize', # task name
     'save_dir': './save_dir/hd', # directory for saving trained model
-    'train_conllu_fpath': './kannada_train.dat', # annotations file in CONLLU format  for training
-    'dev_conllu_fpath': './kannada_dev.dat',
+    'train_conllu_fpath': './hindi_train.dat', # annotations file in CONLLU format  for training
+    'dev_conllu_fpath': './hindi_dev.dat',
     'max_epoch': 10}
 )
 
@@ -36,8 +36,8 @@ trainer = trankit.TPipeline(
     'category': 'customized', # pipeline category
     'task': 'posdep', # task name
     'save_dir': './save_dir/hd', # directory for saving trained model
-    'train_conllu_fpath': './hindi_kannada_train.dat', # annotations file in CONLLU format  for training
-    'dev_conllu_fpath': './hindi_kannada_dev.dat',
+    'train_conllu_fpath': './hindi_train.dat', # annotations file in CONLLU format  for training
+    'dev_conllu_fpath': './hindi_dev.dat',
     'max_epoch': 100}
 )
 
@@ -51,8 +51,8 @@ from trankit.iterators.tagger_iterators import TaggerDataset
 
 test_set = TaggerDataset(
     config=trainer._config,
-    input_conllu="./kannada_test.dat",
-    gold_conllu="./kannada_test.dat",
+    input_conllu="./hindi_test.dat",
+    gold_conllu="./hindi_test.dat",
     evaluate=True
 )
 test_set.numberize()

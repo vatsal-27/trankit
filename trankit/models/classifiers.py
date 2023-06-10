@@ -3,6 +3,7 @@ from .base_models import *
 from trankit.layers.crf_layer import CRFLoss, viterbi_decode
 from ..utils.base_utils import *
 from ..utils.conll import *
+from ..utils.custom_classifiers import *
 from ..utils.spear import probability, log_likelihood_loss, precision_loss, predict_gm_labels,kl_divergence
 instance_fields = [
     'sent_index',
@@ -127,14 +128,15 @@ class PosDepClassifier(nn.Module):
 
         # loss function
         self.criteria = torch.nn.CrossEntropyLoss()
-        self.pi = torch.nn.Parameter(torch.rand((len(self.vocabs[DEPREL]), self.n_lfs), device = self.config.device).double())
-        (self.pi).requires_grad = True
-        self.theta = torch.nn.Parameter(torch.rand((len(self.vocabs[DEPREL]), self.n_lfs), device = self.config.device).double())
-        (self.theta).requires_grad = True
-        self.k = torch.tensor(get_labels(self.config.df,self.vocabs[DEPREL]),device=self.config.device)
+        if integrate_spear:
+            self.pi = torch.nn.Parameter(torch.rand((len(self.vocabs[DEPREL]), self.n_lfs), device = self.config.device).double())
+            (self.pi).requires_grad = True
+            self.theta = torch.nn.Parameter(torch.rand((len(self.vocabs[DEPREL]), self.n_lfs), device = self.config.device).double())
+            (self.theta).requires_grad = True
+            self.k = torch.tensor(get_labels(self.config.df,self.vocabs[DEPREL]),device=self.config.device)
         # print("k=",self.k)
         
-        self.continuous_mask  = torch.tensor([0]*len(self.config.df),device=self.config.device)
+            self.continuous_mask  = torch.tensor([0]*len(self.config.df),device=self.config.device)
         # print([i for i,j in self.named_parameters()])
         if not config.training:
             # load pretrained weights
@@ -172,23 +174,23 @@ class PosDepClassifier(nn.Module):
         for i in range(NUM_CLASS):
             x = getattr(self,CLASS_NAMES[i]+"_ffn").to(self.device)(word_reprs)
             loss += self.criteria(x.view(-1,len(self.vocabs[CLASS_NAMES[i]])),batch[16+i])
+        if integrate_spear:
+            s = batch.label_fns_score
+            l = batch.label_fns_tau
 
-        s = batch.label_fns_score
-        l = batch.label_fns_tau
+            loss1 = log_likelihood_loss(
+                self.theta, 
+                self.pi, 
+                l, 
+                s,
+                self.k, 
+                len(self.vocabs[DEPREL]), 
+                self.continuous_mask, 
+                self.qc_, 
+                self.config.device
+                )
 
-        loss1 = log_likelihood_loss(
-            self.theta, 
-            self.pi, 
-            l, 
-            s,
-            self.k, 
-            len(self.vocabs[DEPREL]), 
-            self.continuous_mask, 
-            self.qc_, 
-            self.config.device
-            )
-
-        loss2 = precision_loss(self.theta, self.k, len(self.vocabs[DEPREL]), self.qt_, self.config.device)
+            loss2 = precision_loss(self.theta, self.k, len(self.vocabs[DEPREL]), self.qt_, self.config.device)
         
         # head
         dep_reprs = torch.cat(
@@ -217,19 +219,24 @@ class PosDepClassifier(nn.Module):
         # # print(deprel_scores.shape)
         # print("dperel scores = ",deprel_scores)
         # print("deprel scores are between ",torch.min(deprel_scores),torch.max(deprel_scores))
-        deprel_gm_scores = probability(self.theta, self.pi, batch.label_fns_tau, batch.label_fns_score, self.k, len(self.vocabs[DEPREL]), self.continuous_mask, self.qc_, self.config.device)
+        if integrate_spear:
+            deprel_gm_scores = probability(self.theta, self.pi, batch.label_fns_tau, batch.label_fns_score, self.k, len(self.vocabs[DEPREL]), self.continuous_mask, self.qc_, self.config.device)
         deprel_fm_scores = torch.nn.Softmax(dim = 1)(deprel_scores)
         # print("gm scores are between ",torch.min(deprel_gm_scores),torch.max(deprel_gm_scores))
         # print("fm scores are between ",torch.min(deprel_fm_scores),torch.max(deprel_fm_scores))
-        loss3 = kl_divergence(deprel_gm_scores+1e-18,deprel_fm_scores+1e-18)
+        if integrate_spear:
+            loss3 = kl_divergence(deprel_gm_scores+1e-18,deprel_fm_scores+1e-18)
         deprel_target = batch.deprel_idxs.masked_fill(batch.word_mask[:, 1:], -100)
         loss += self.criteria(deprel_scores.contiguous(), deprel_target.view(-1))
         # print("loss loop ended")
         # print(loss,loss1)4
-        loss4 = loss + loss1 + loss2 + loss3
         
+        if not integrate_spear:
+            loss4 = loss
+        else: 
+            loss4 = loss + loss1 + loss2 + loss3
         if torch.isnan(loss4):
-            loss4 = loss1
+            loss4 = loss
         # print("full loss", loss4.item())
         # print('loss 1 is ', loss1.item())
         # print('loss 2 is ', loss2.item())
@@ -302,13 +309,13 @@ class PosDepClassifier(nn.Module):
                                 unlabeled_target.view(-1))
             # deprel
             deprel_scores = self.deprel(dep_reprs, dep_reprs)
-            # print(deprel_scores.shape)
+            print(deprel_scores.shape)
             deprel_scores = deprel_scores[:, 1:]  
             deprel_scores = torch.gather(deprel_scores, 2,
                                         batch.head_idxs.unsqueeze(2).unsqueeze(3).expand(-1, -1, -1, len(
                                             self.vocabs[DEPREL]))).view(
                 -1, len(self.vocabs[DEPREL]))
-            # print(deprel_scores.shape)
+            print(deprel_scores.shape)
             deprel_gm_scores = probability(self.theta, self.pi, batch.label_fns_tau, batch.label_fns_score, self.k, len(self.vocabs[DEPREL]), self.continuous_mask, self.qc_, self.config.device)
             deprel_fm_scores = torch.nn.Softmax(dim = 1)(deprel_scores)
             print("gm scores are between ",torch.min(deprel_gm_scores),torch.max(deprel_gm_scores))

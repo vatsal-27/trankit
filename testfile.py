@@ -1,11 +1,11 @@
 import pandas as pd
 import numpy as np
-df=pd.read_csv("paths2.csv")
+df=pd.read_csv("paths.csv")
 # print(df.head(5))
 from trankit.utils.analysis.lf_set import LFSet,LFAnalysis
 
 LFS = [
-   'k1','k1s','ccof','r6','nmod','k2','vmod','pof','k7p'
+   'k1','k1s','ccof','r6','nmod','k2','vmod','pof','k7p','lwg__aux'
 ]
 
 rules = LFSet("label_LF")

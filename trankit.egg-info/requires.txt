@@ -1,0 +1,12 @@
+filelock
+langid==1.1.6
+numpy
+packaging
+protobuf
+regex!=2019.12.17
+requests
+sacremoses
+sentencepiece
+tokenizers>=0.7.0
+torch>=1.6.0
+tqdm>=4.27

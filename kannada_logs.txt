@@ -1,0 +1,4 @@
+16
+Setting up training config...
+['train.py', 'dataset', 'setup.py', 'both_plot2.png', 'train_only_posdep.py', '.git', 'lf_analysis.py', 'gen.py', 'README.md', 'save_dir', 'val_score_plot2.png', 'xyz.py', 'kannada_logs.txt', 'without_spear.conllu', 'single_paths.csv', 'trankit', 'with_spear.conllu', 'testfile.py', 'paths.csv', 'train_plot2.png', 'val_plot2.png', 'logs.txt', 'trankit.egg-info', 'logs', 'single_paths.conllu', 'scorer.py']
+Loaded 14089 entries from ./dataset/hindi_train.dat

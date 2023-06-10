@@ -189,6 +189,7 @@ def load_conllu(file):
 
     while True:
         line = file.readline()
+        #print(line)
         if not line:
             break
         line = _decode(line.rstrip("\r\n"))
@@ -515,6 +516,7 @@ def evaluate(gold_ud, system_ud):
         "Lemmas": alignment_score(alignment, lambda w, ga: w.columns[LEMMA] if ga(w).columns[LEMMA] != "_" else "_"),
         "UAS": alignment_score(alignment, lambda w, ga: ga(w.parent)),
         "LAS": alignment_score(alignment, lambda w, ga: (ga(w.parent), w.columns[DEPREL])),
+        "DAS": alignment_score(alignment, lambda w, _: (w.columns[DEPREL])),
         "CLAS": alignment_score(alignment, lambda w, ga: (ga(w.parent), w.columns[DEPREL]),
                                 filter_fn=lambda w: w.is_content_deprel),
         "MLAS": alignment_score(alignment,
@@ -567,6 +569,7 @@ def main():
     # Print the evaluation
     if not args.verbose and not args.counts:
         print("LAS F1 Score: {:.2f}".format(100 * evaluation["LAS"].f1))
+        print("DAS F1 Score: {:.2f}".format(100 * evaluation["DAS"].f1))
         print("MLAS Score: {:.2f}".format(100 * evaluation["MLAS"].f1))
         print("BLEX Score: {:.2f}".format(100 * evaluation["BLEX"].f1))
     else:
@@ -584,7 +587,7 @@ def main():
         "-".join(Cat6)+"-",
         "-".join(Cat7)+"-",
         "-".join(Cat8)+"-",
-        "-".join(Cat9)+"-", "AllTags", "Lemmas", "UAS", "LAS",
+        "-".join(Cat9)+"-", "AllTags", "Lemmas", "UAS", "LAS","DAS",
                        "CLAS", "MLAS", "BLEX"]:
             if args.counts:
                 print("{:11}|{:10} |{:10} |{:10} |{:10}".format(

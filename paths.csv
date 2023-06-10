@@ -1,0 +1,6 @@
+postag,postag2,category,gen,num,pers,case,vib,tam,category2,gen2,num2,pers2,case2,vib2,tam2,label,prec
+-,VM,-,-,-,3,o,-,0,v,-,-,-,-,-,-,k5,1.00
+-,VM,-,-,-,3,o,-,-,v,-,-,-,-,-,-,k1u,1.00
+-,-,-,-,3,o,-,0,-,-,-,-,-,-,-,-,ras-k2,0.96
+VM,-,v,-,-,-,o,-,-,-,-,-,-,o,-,0,nmod_k2inv,0.97
+-,-,-,-,-,-,-,3,-,-,-,-,-,-,-,0,r6-k1,0.98

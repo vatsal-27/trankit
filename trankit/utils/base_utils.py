@@ -80,7 +80,7 @@ def get_ud_performance_table(score):
     X["UPOS"] = "CAT"
     X["XPOS"] = "POSTAG"
     for metric in ["Tokens", "Sentences", "Words"]+H+CLASS_NAMES+["AllTags", "Lemmas", "UAS", "LAS",
-                   "CLAS", "MLAS", "BLEX"]:
+                   "CLAS", "MLAS","DAS" ,"BLEX"]:
         out += "{:11}|{:10.2f} |{:10.2f} |{:10.2f} |{}".format(
             X.get(metric,metric),
             100 * score[metric].precision,

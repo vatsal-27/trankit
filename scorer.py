@@ -1,6 +1,6 @@
 with open("./save_dir/xlm-roberta-base/customized-mwt/preds/tagger.test.conllu.epoch--1") as f:
     L = f.readlines() 
-with open("kannada_test.dat") as f:
+with open("hindi_test.dat") as f:
     M = f.readlines()
 
 X = []

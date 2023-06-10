@@ -261,7 +261,7 @@ class TPipeline:
             'dev': self._dev_conllu_fpath
         }
         print(os.listdir())
-        df = pd.read_csv("paths.csv")
+        df = pd.read_csv("lggall_updated.tsv", sep='\t')
         self._config.df = df
         self._config.n_lffs = len(df)
         self.train_set = TaggerDataset(
@@ -349,7 +349,7 @@ class TPipeline:
         best_dev = {'average': 0}
         best_epoch = 0
         for epoch in range(self._config.max_epoch):
-            self._printlog('*' * 30)
+            self._printlog('*' * 50)
             print('Tokenizer: Epoch: {}'.format(epoch))
             # training set
             progress = tqdm(total=self.batch_num, ncols=75,
@@ -377,7 +377,7 @@ class TPipeline:
             dev_score, pred_conllu_fpath = self._eval_tokenize(data_set=self.dev_set, batch_num=self.dev_batch_num,
                                                                name='dev', epoch=epoch)
 
-            if epoch <= 30 or dev_score['average'] > best_dev['average']:
+            if epoch <= 50 or dev_score['average'] > best_dev['average']:
                 self._save_model(ckpt_fpath=os.path.join(self._config._save_dir,
                                                          '{}.tokenizer.mdl'.format(self._lang)),
                                  epoch=epoch)
@@ -390,7 +390,7 @@ class TPipeline:
                 )
 
             remove_with_path(pred_conllu_fpath)
-            self._printlog('-' * 30 + ' Best dev CoNLLu score: epoch {}'.format(best_epoch) + '-' * 30)
+            self._printlog('-' * 50 + ' Best dev CoNLLu score: epoch {}'.format(best_epoch) + '-' * 50)
             self._printlog(get_ud_performance_table(dev_score))
 
     def _eval_tokenize(self, data_set, batch_num, name, epoch):
@@ -494,8 +494,8 @@ class TPipeline:
         T_LOSS =[]
         V_LOSS =[]
         V_SCORE = []
-        for epoch in range(30):
-            self._printlog('*' * 30)
+        for epoch in range(50):
+            self._printlog('*' * 50)
             print('Posdep tagger: Epoch: {}'.format(epoch))
             # training set
             progress = tqdm(total=self.batch_num, ncols=75,
@@ -544,7 +544,7 @@ class TPipeline:
             # V_LOSS += [int(sum(loss_list)/len(loss_list))]
             V_LOSS += [ 0 ]
             V_SCORE += [dev_score['average']]
-            if epoch <= 30 or dev_score['average'] > best_dev['average']:
+            if epoch <= 50 or dev_score['average'] > best_dev['average']:
                 self._save_model(ckpt_fpath=os.path.join(self._config._save_dir,
                                                          '{}.tagger.mdl'.format(self._lang)),
                                  epoch=epoch)
@@ -555,7 +555,7 @@ class TPipeline:
                     os.path.join(self._config._save_dir, 'preds', 'tagger.dev.conllu')
                 )
             remove_with_path(pred_conllu_fpath)
-            self._printlog('-' * 30 + ' Best dev CoNLLu score: epoch {}'.format(best_epoch) + '-' * 30)
+            self._printlog('-' * 50 + ' Best dev CoNLLu score: epoch {}'.format(best_epoch) + '-' * 50)
             self._printlog(get_ud_performance_table(dev_score))
             plt.figure()
             plt.yscale("log")
@@ -680,7 +680,7 @@ class TPipeline:
         best_dev = {'p': 0, 'r': 0, 'f1': 0}
         best_epoch = 0
         for epoch in range(self._config.max_epoch):
-            self._printlog('*' * 30)
+            self._printlog('*' * 50)
             self._printlog('NER: Epoch: {}'.format(epoch))
             # training set
             progress = tqdm(total=self.batch_num, ncols=75,
@@ -716,7 +716,7 @@ class TPipeline:
                 best_epoch = epoch
 
             # printout current best dev
-            self._printlog('-' * 30)
+            self._printlog('-' * 50)
             self._printlog('Best dev F1 score: epoch {}, F1: {:.2f}'.format(best_epoch, best_dev['f1']))
         print('Training done!')
 

@@ -8,7 +8,9 @@ def func(task):
             ["tam"],
             ["pers"],
             ["gen"],
-            ["num"]
+            ["num"],
+            ["stype"],
+            ["voicetype"]
         ] 
 
         #avaialble options: num case vib gen cat voicetype xpos upos chuntype chunkID tam pers stype
@@ -18,7 +20,9 @@ def func(task):
             "tam",
             "pers",
             "gen",
-            "num"
+            "num",
+            "stype",
+            "voicetype"
         ] #plzz dont use the following class names xpos upos head . Use variable naming rules while naming these classnames.These names will be used as variable names
 
         NUM_CLASS = len(Classes)
@@ -30,4 +34,5 @@ def func(task):
         ignore_upos_xpos = False
     return Classes,CLASS_NAMES,NUM_CLASS,ignore_upos_xpos
 Classes,CLASS_NAMES,NUM_CLASS,ignore_upos_xpos = func("posdep")
+integrate_spear = False
 task = ""

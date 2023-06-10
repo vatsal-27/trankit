@@ -1,0 +1,823 @@
+16
+Setting up training config...
+['train.py', 'dataset', 'setup.py', 'both_plot2.png', 'train_only_posdep.py', '.git', 'lf_analysis.py', 'gen.py', 'README.md', 'save_dir', 'val_score_plot2.png', 'xyz.py', 'without_spear.conllu', 'single_paths.csv', 'trankit', 'with_spear.conllu', 'testfile.py', 'paths.csv', 'train_plot2.png', 'val_plot2.png', 'logs.txt', 'trankit.egg-info', 'logs', 'single_paths.conllu', 'scorer.py']
+Loaded 13088 entries from ./dataset/kannada_train.dat
+Loaded 2801 entries from ./dataset/kannada_dev.dat
+******************************
+Posdep tagger: Epoch: 0
+training loss =  tensor(18.3053, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 0------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     93.19 |     93.19 |     93.19 |     93.19
+POSTAG     |     87.89 |     87.89 |     87.89 |     87.89
+case       |     92.82 |     92.82 |     92.82 |     92.82
+vib        |     69.37 |     69.37 |     69.37 |     69.37
+tam        |     69.61 |     69.61 |     69.61 |     69.61
+pers       |     89.09 |     89.09 |     89.09 |     89.09
+gen        |     94.35 |     94.35 |     94.35 |     94.35
+num        |     88.16 |     88.16 |     88.16 |     88.16
+AllTags    |     55.31 |     55.31 |     55.31 |     55.31
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     72.31 |     72.31 |     72.31 |     72.31
+LAS        |     59.10 |     59.10 |     59.10 |     59.10
+CLAS       |     85.61 |     83.07 |     84.32 |     83.07
+MLAS       |     84.55 |     82.04 |     83.28 |     82.04
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 1
+training loss =  tensor(5.4574, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 1------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     95.17 |     95.17 |     95.17 |     95.17
+POSTAG     |     91.28 |     91.28 |     91.28 |     91.28
+case       |     95.46 |     95.46 |     95.46 |     95.46
+vib        |     80.16 |     80.16 |     80.16 |     80.16
+tam        |     80.23 |     80.23 |     80.23 |     80.23
+pers       |     91.51 |     91.51 |     91.51 |     91.51
+gen        |     96.63 |     96.63 |     96.63 |     96.63
+num        |     90.87 |     90.87 |     90.87 |     90.87
+AllTags    |     66.90 |     66.90 |     66.90 |     66.90
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     86.39 |     86.39 |     86.39 |     86.39
+LAS        |     72.38 |     72.38 |     72.38 |     72.38
+CLAS       |     94.75 |     93.30 |     94.02 |     93.30
+MLAS       |     93.57 |     92.13 |     92.85 |     92.13
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 2
+training loss =  tensor(3.9772, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 2------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     95.36 |     95.36 |     95.36 |     95.36
+POSTAG     |     92.19 |     92.19 |     92.19 |     92.19
+case       |     95.98 |     95.98 |     95.98 |     95.98
+vib        |     82.92 |     82.92 |     82.92 |     82.92
+tam        |     82.96 |     82.96 |     82.96 |     82.96
+pers       |     92.15 |     92.15 |     92.15 |     92.15
+gen        |     96.81 |     96.81 |     96.81 |     96.81
+num        |     91.54 |     91.54 |     91.54 |     91.54
+AllTags    |     69.97 |     69.97 |     69.97 |     69.97
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     88.77 |     88.77 |     88.77 |     88.77
+LAS        |     74.98 |     74.98 |     74.98 |     74.98
+CLAS       |     95.86 |     94.57 |     95.21 |     94.57
+MLAS       |     94.58 |     93.30 |     93.93 |     93.30
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 3
+training loss =  tensor(3.4175, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 3------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     95.73 |     95.73 |     95.73 |     95.73
+POSTAG     |     92.67 |     92.67 |     92.67 |     92.67
+case       |     96.26 |     96.26 |     96.26 |     96.26
+vib        |     83.81 |     83.81 |     83.81 |     83.81
+tam        |     84.02 |     84.02 |     84.02 |     84.02
+pers       |     92.33 |     92.33 |     92.33 |     92.33
+gen        |     96.85 |     96.85 |     96.85 |     96.85
+num        |     91.94 |     91.94 |     91.94 |     91.94
+AllTags    |     71.20 |     71.20 |     71.20 |     71.20
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     89.90 |     89.90 |     89.90 |     89.90
+LAS        |     76.27 |     76.27 |     76.27 |     76.27
+CLAS       |     95.96 |     94.44 |     95.19 |     94.44
+MLAS       |     94.64 |     93.14 |     93.89 |     93.14
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 4
+training loss =  tensor(3.1284, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 4------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     95.76 |     95.76 |     95.76 |     95.76
+POSTAG     |     92.75 |     92.75 |     92.75 |     92.75
+case       |     96.09 |     96.09 |     96.09 |     96.09
+vib        |     84.34 |     84.34 |     84.34 |     84.34
+tam        |     84.48 |     84.48 |     84.48 |     84.48
+pers       |     91.82 |     91.82 |     91.82 |     91.82
+gen        |     97.01 |     97.01 |     97.01 |     97.01
+num        |     91.56 |     91.56 |     91.56 |     91.56
+AllTags    |     71.34 |     71.34 |     71.34 |     71.34
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     90.52 |     90.52 |     90.52 |     90.52
+LAS        |     76.86 |     76.86 |     76.86 |     76.86
+CLAS       |     96.43 |     95.10 |     95.76 |     95.10
+MLAS       |     95.06 |     93.75 |     94.40 |     93.75
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 5
+training loss =  tensor(2.8673, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 5------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     95.93 |     95.93 |     95.93 |     95.93
+POSTAG     |     92.97 |     92.97 |     92.97 |     92.97
+case       |     96.40 |     96.40 |     96.40 |     96.40
+vib        |     84.91 |     84.91 |     84.91 |     84.91
+tam        |     84.98 |     84.98 |     84.98 |     84.98
+pers       |     92.65 |     92.65 |     92.65 |     92.65
+gen        |     96.91 |     96.91 |     96.91 |     96.91
+num        |     92.22 |     92.22 |     92.22 |     92.22
+AllTags    |     72.43 |     72.43 |     72.43 |     72.43
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     90.98 |     90.98 |     90.98 |     90.98
+LAS        |     78.01 |     78.01 |     78.01 |     78.01
+CLAS       |     95.90 |     96.00 |     95.95 |     96.00
+MLAS       |     94.42 |     94.52 |     94.47 |     94.52
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 6
+training loss =  tensor(2.6220, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 6------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.21 |     96.21 |     96.21 |     96.21
+POSTAG     |     93.31 |     93.31 |     93.31 |     93.31
+case       |     96.67 |     96.67 |     96.67 |     96.67
+vib        |     85.06 |     85.06 |     85.06 |     85.06
+tam        |     85.23 |     85.23 |     85.23 |     85.23
+pers       |     92.81 |     92.81 |     92.81 |     92.81
+gen        |     97.23 |     97.23 |     97.23 |     97.23
+num        |     92.48 |     92.48 |     92.48 |     92.48
+AllTags    |     73.15 |     73.15 |     73.15 |     73.15
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     91.20 |     91.20 |     91.20 |     91.20
+LAS        |     77.74 |     77.74 |     77.74 |     77.74
+CLAS       |     96.54 |     95.42 |     95.98 |     95.42
+MLAS       |     95.66 |     94.54 |     95.10 |     94.54
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 7
+training loss =  tensor(2.4524, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 7------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.21 |     96.21 |     96.21 |     96.21
+POSTAG     |     93.48 |     93.48 |     93.48 |     93.48
+case       |     96.65 |     96.65 |     96.65 |     96.65
+vib        |     85.70 |     85.70 |     85.70 |     85.70
+tam        |     85.55 |     85.55 |     85.55 |     85.55
+pers       |     92.98 |     92.98 |     92.98 |     92.98
+gen        |     97.12 |     97.12 |     97.12 |     97.12
+num        |     92.64 |     92.64 |     92.64 |     92.64
+AllTags    |     73.59 |     73.59 |     73.59 |     73.59
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     91.86 |     91.86 |     91.86 |     91.86
+LAS        |     78.94 |     78.94 |     78.94 |     78.94
+CLAS       |     96.21 |     96.19 |     96.20 |     96.19
+MLAS       |     95.26 |     95.23 |     95.24 |     95.23
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 8
+training loss =  tensor(2.3065, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 8------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.32 |     96.32 |     96.32 |     96.32
+POSTAG     |     93.73 |     93.73 |     93.73 |     93.73
+case       |     96.44 |     96.44 |     96.44 |     96.44
+vib        |     85.37 |     85.37 |     85.37 |     85.37
+tam        |     85.31 |     85.31 |     85.31 |     85.31
+pers       |     93.01 |     93.01 |     93.01 |     93.01
+gen        |     97.18 |     97.18 |     97.18 |     97.18
+num        |     92.67 |     92.67 |     92.67 |     92.67
+AllTags    |     73.70 |     73.70 |     73.70 |     73.70
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     91.50 |     91.50 |     91.50 |     91.50
+LAS        |     78.69 |     78.69 |     78.69 |     78.69
+CLAS       |     96.64 |     95.13 |     95.88 |     95.13
+MLAS       |     95.53 |     94.04 |     94.78 |     94.04
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 9
+training loss =  tensor(2.2090, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 9------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.28 |     96.28 |     96.28 |     96.28
+POSTAG     |     93.53 |     93.53 |     93.53 |     93.53
+case       |     96.63 |     96.63 |     96.63 |     96.63
+vib        |     85.59 |     85.59 |     85.59 |     85.59
+tam        |     85.67 |     85.67 |     85.67 |     85.67
+pers       |     93.11 |     93.11 |     93.11 |     93.11
+gen        |     97.14 |     97.14 |     97.14 |     97.14
+num        |     92.76 |     92.76 |     92.76 |     92.76
+AllTags    |     74.14 |     74.14 |     74.14 |     74.14
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     92.33 |     92.33 |     92.33 |     92.33
+LAS        |     79.72 |     79.72 |     79.72 |     79.72
+CLAS       |     96.61 |     95.97 |     96.29 |     95.97
+MLAS       |     95.57 |     94.94 |     95.26 |     94.94
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 10
+training loss =  tensor(2.1178, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 10------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.39 |     96.39 |     96.39 |     96.39
+POSTAG     |     93.79 |     93.79 |     93.79 |     93.79
+case       |     96.69 |     96.69 |     96.69 |     96.69
+vib        |     86.11 |     86.11 |     86.11 |     86.11
+tam        |     86.01 |     86.01 |     86.01 |     86.01
+pers       |     93.04 |     93.04 |     93.04 |     93.04
+gen        |     97.20 |     97.20 |     97.20 |     97.20
+num        |     92.65 |     92.65 |     92.65 |     92.65
+AllTags    |     74.52 |     74.52 |     74.52 |     74.52
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     91.89 |     91.89 |     91.89 |     91.89
+LAS        |     79.14 |     79.14 |     79.14 |     79.14
+CLAS       |     96.12 |     95.87 |     95.99 |     95.87
+MLAS       |     95.25 |     94.99 |     95.12 |     94.99
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 11
+training loss =  tensor(2.0389, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 11------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.41 |     96.41 |     96.41 |     96.41
+POSTAG     |     93.76 |     93.76 |     93.76 |     93.76
+case       |     96.68 |     96.68 |     96.68 |     96.68
+vib        |     85.84 |     85.84 |     85.84 |     85.84
+tam        |     86.04 |     86.04 |     86.04 |     86.04
+pers       |     93.28 |     93.28 |     93.28 |     93.28
+gen        |     97.23 |     97.23 |     97.23 |     97.23
+num        |     92.89 |     92.89 |     92.89 |     92.89
+AllTags    |     74.70 |     74.70 |     74.70 |     74.70
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     92.21 |     92.21 |     92.21 |     92.21
+LAS        |     79.73 |     79.73 |     79.73 |     79.73
+CLAS       |     96.22 |     96.37 |     96.29 |     96.37
+MLAS       |     95.19 |     95.34 |     95.26 |     95.34
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 12
+training loss =  tensor(1.9696, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 12------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.21 |     96.21 |     96.21 |     96.21
+POSTAG     |     93.72 |     93.72 |     93.72 |     93.72
+case       |     96.63 |     96.63 |     96.63 |     96.63
+vib        |     85.81 |     85.81 |     85.81 |     85.81
+tam        |     85.87 |     85.87 |     85.87 |     85.87
+pers       |     93.39 |     93.39 |     93.39 |     93.39
+gen        |     97.22 |     97.22 |     97.22 |     97.22
+num        |     92.89 |     92.89 |     92.89 |     92.89
+AllTags    |     74.40 |     74.40 |     74.40 |     74.40
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     92.43 |     92.43 |     92.43 |     92.43
+LAS        |     79.90 |     79.90 |     79.90 |     79.90
+CLAS       |     96.77 |     96.16 |     96.47 |     96.16
+MLAS       |     95.84 |     95.23 |     95.54 |     95.23
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 13
+training loss =  tensor(1.8952, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 13------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.38 |     96.38 |     96.38 |     96.38
+POSTAG     |     93.77 |     93.77 |     93.77 |     93.77
+case       |     96.67 |     96.67 |     96.67 |     96.67
+vib        |     86.11 |     86.11 |     86.11 |     86.11
+tam        |     86.19 |     86.19 |     86.19 |     86.19
+pers       |     93.27 |     93.27 |     93.27 |     93.27
+gen        |     97.20 |     97.20 |     97.20 |     97.20
+num        |     92.94 |     92.94 |     92.94 |     92.94
+AllTags    |     74.67 |     74.67 |     74.67 |     74.67
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     92.33 |     92.33 |     92.33 |     92.33
+LAS        |     79.91 |     79.91 |     79.91 |     79.91
+CLAS       |     96.68 |     96.40 |     96.54 |     96.40
+MLAS       |     95.75 |     95.47 |     95.61 |     95.47
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 14
+training loss =  tensor(1.8598, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 14------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.43 |     96.43 |     96.43 |     96.43
+POSTAG     |     93.89 |     93.89 |     93.89 |     93.89
+case       |     96.67 |     96.67 |     96.67 |     96.67
+vib        |     85.75 |     85.75 |     85.75 |     85.75
+tam        |     85.91 |     85.91 |     85.91 |     85.91
+pers       |     93.36 |     93.36 |     93.36 |     93.36
+gen        |     97.21 |     97.21 |     97.21 |     97.21
+num        |     93.10 |     93.10 |     93.10 |     93.10
+AllTags    |     74.68 |     74.68 |     74.68 |     74.68
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     92.60 |     92.60 |     92.60 |     92.60
+LAS        |     79.83 |     79.83 |     79.83 |     79.83
+CLAS       |     96.73 |     96.45 |     96.59 |     96.45
+MLAS       |     95.78 |     95.50 |     95.64 |     95.50
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 15
+training loss =  tensor(1.7886, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 15------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.35 |     96.35 |     96.35 |     96.35
+POSTAG     |     93.90 |     93.90 |     93.90 |     93.90
+case       |     96.66 |     96.66 |     96.66 |     96.66
+vib        |     86.17 |     86.17 |     86.17 |     86.17
+tam        |     86.24 |     86.24 |     86.24 |     86.24
+pers       |     93.32 |     93.32 |     93.32 |     93.32
+gen        |     97.23 |     97.23 |     97.23 |     97.23
+num        |     92.99 |     92.99 |     92.99 |     92.99
+AllTags    |     75.03 |     75.03 |     75.03 |     75.03
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     92.73 |     92.73 |     92.73 |     92.73
+LAS        |     80.37 |     80.37 |     80.37 |     80.37
+CLAS       |     96.82 |     96.77 |     96.79 |     96.77
+MLAS       |     95.81 |     95.76 |     95.79 |     95.76
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 16
+training loss =  tensor(1.7552, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 16------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.53 |     96.53 |     96.53 |     96.53
+POSTAG     |     93.92 |     93.92 |     93.92 |     93.92
+case       |     96.73 |     96.73 |     96.73 |     96.73
+vib        |     85.74 |     85.74 |     85.74 |     85.74
+tam        |     85.84 |     85.84 |     85.84 |     85.84
+pers       |     93.48 |     93.48 |     93.48 |     93.48
+gen        |     97.19 |     97.19 |     97.19 |     97.19
+num        |     93.08 |     93.08 |     93.08 |     93.08
+AllTags    |     74.86 |     74.86 |     74.86 |     74.86
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     92.56 |     92.56 |     92.56 |     92.56
+LAS        |     80.38 |     80.38 |     80.38 |     80.38
+CLAS       |     96.86 |     96.42 |     96.64 |     96.42
+MLAS       |     96.01 |     95.58 |     95.79 |     95.58
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 17
+training loss =  tensor(1.7027, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 17------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.05 |     96.05 |     96.05 |     96.05
+POSTAG     |     93.32 |     93.32 |     93.32 |     93.32
+case       |     96.69 |     96.69 |     96.69 |     96.69
+vib        |     85.96 |     85.96 |     85.96 |     85.96
+tam        |     85.91 |     85.91 |     85.91 |     85.91
+pers       |     93.54 |     93.54 |     93.54 |     93.54
+gen        |     97.20 |     97.20 |     97.20 |     97.20
+num        |     93.32 |     93.32 |     93.32 |     93.32
+AllTags    |     74.74 |     74.74 |     74.74 |     74.74
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     92.73 |     92.73 |     92.73 |     92.73
+LAS        |     80.21 |     80.21 |     80.21 |     80.21
+CLAS       |     97.14 |     96.37 |     96.76 |     96.37
+MLAS       |     96.21 |     95.44 |     95.82 |     95.44
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 18
+training loss =  tensor(1.6556, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 18------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.43 |     96.43 |     96.43 |     96.43
+POSTAG     |     93.90 |     93.90 |     93.90 |     93.90
+case       |     96.72 |     96.72 |     96.72 |     96.72
+vib        |     85.91 |     85.91 |     85.91 |     85.91
+tam        |     85.97 |     85.97 |     85.97 |     85.97
+pers       |     93.57 |     93.57 |     93.57 |     93.57
+gen        |     97.20 |     97.20 |     97.20 |     97.20
+num        |     93.18 |     93.18 |     93.18 |     93.18
+AllTags    |     74.82 |     74.82 |     74.82 |     74.82
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     92.50 |     92.50 |     92.50 |     92.50
+LAS        |     80.32 |     80.32 |     80.32 |     80.32
+CLAS       |     96.93 |     96.08 |     96.50 |     96.08
+MLAS       |     95.99 |     95.15 |     95.57 |     95.15
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 19
+training loss =  tensor(1.6047, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 19------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.48 |     96.48 |     96.48 |     96.48
+POSTAG     |     94.07 |     94.07 |     94.07 |     94.07
+case       |     96.73 |     96.73 |     96.73 |     96.73
+vib        |     86.17 |     86.17 |     86.17 |     86.17
+tam        |     86.26 |     86.26 |     86.26 |     86.26
+pers       |     93.52 |     93.52 |     93.52 |     93.52
+gen        |     97.22 |     97.22 |     97.22 |     97.22
+num        |     93.15 |     93.15 |     93.15 |     93.15
+AllTags    |     75.37 |     75.37 |     75.37 |     75.37
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     92.54 |     92.54 |     92.54 |     92.54
+LAS        |     80.25 |     80.25 |     80.25 |     80.25
+CLAS       |     96.60 |     96.42 |     96.51 |     96.42
+MLAS       |     95.70 |     95.52 |     95.61 |     95.52
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 20
+training loss =  tensor(1.5739, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 20------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.38 |     96.38 |     96.38 |     96.38
+POSTAG     |     93.97 |     93.97 |     93.97 |     93.97
+case       |     96.73 |     96.73 |     96.73 |     96.73
+vib        |     86.28 |     86.28 |     86.28 |     86.28
+tam        |     86.21 |     86.21 |     86.21 |     86.21
+pers       |     93.37 |     93.37 |     93.37 |     93.37
+gen        |     97.24 |     97.24 |     97.24 |     97.24
+num        |     93.13 |     93.13 |     93.13 |     93.13
+AllTags    |     75.20 |     75.20 |     75.20 |     75.20
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     92.91 |     92.91 |     92.91 |     92.91
+LAS        |     80.59 |     80.59 |     80.59 |     80.59
+CLAS       |     96.94 |     96.45 |     96.69 |     96.45
+MLAS       |     96.17 |     95.68 |     95.92 |     95.68
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 21
+training loss =  tensor(1.5337, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 21------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.48 |     96.48 |     96.48 |     96.48
+POSTAG     |     93.98 |     93.98 |     93.98 |     93.98
+case       |     96.67 |     96.67 |     96.67 |     96.67
+vib        |     86.14 |     86.14 |     86.14 |     86.14
+tam        |     86.25 |     86.25 |     86.25 |     86.25
+pers       |     93.52 |     93.52 |     93.52 |     93.52
+gen        |     97.20 |     97.20 |     97.20 |     97.20
+num        |     93.14 |     93.14 |     93.14 |     93.14
+AllTags    |     75.27 |     75.27 |     75.27 |     75.27
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     92.94 |     92.94 |     92.94 |     92.94
+LAS        |     80.78 |     80.78 |     80.78 |     80.78
+CLAS       |     97.14 |     96.24 |     96.69 |     96.24
+MLAS       |     96.20 |     95.31 |     95.76 |     95.31
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 22
+training loss =  tensor(1.4983, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 22------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.43 |     96.43 |     96.43 |     96.43
+POSTAG     |     93.92 |     93.92 |     93.92 |     93.92
+case       |     96.65 |     96.65 |     96.65 |     96.65
+vib        |     86.09 |     86.09 |     86.09 |     86.09
+tam        |     86.28 |     86.28 |     86.28 |     86.28
+pers       |     93.30 |     93.30 |     93.30 |     93.30
+gen        |     97.14 |     97.14 |     97.14 |     97.14
+num        |     92.88 |     92.88 |     92.88 |     92.88
+AllTags    |     74.94 |     74.94 |     74.94 |     74.94
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     92.78 |     92.78 |     92.78 |     92.78
+LAS        |     80.78 |     80.78 |     80.78 |     80.78
+CLAS       |     96.79 |     96.64 |     96.71 |     96.64
+MLAS       |     95.70 |     95.55 |     95.63 |     95.55
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 23
+training loss =  tensor(1.4540, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 23------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.52 |     96.52 |     96.52 |     96.52
+POSTAG     |     94.05 |     94.05 |     94.05 |     94.05
+case       |     96.65 |     96.65 |     96.65 |     96.65
+vib        |     86.12 |     86.12 |     86.12 |     86.12
+tam        |     86.19 |     86.19 |     86.19 |     86.19
+pers       |     93.52 |     93.52 |     93.52 |     93.52
+gen        |     97.25 |     97.25 |     97.25 |     97.25
+num        |     93.21 |     93.21 |     93.21 |     93.21
+AllTags    |     75.21 |     75.21 |     75.21 |     75.21
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     92.87 |     92.87 |     92.87 |     92.87
+LAS        |     80.90 |     80.90 |     80.90 |     80.90
+CLAS       |     96.95 |     96.85 |     96.90 |     96.85
+MLAS       |     96.02 |     95.92 |     95.97 |     95.92
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 24
+training loss =  tensor(1.4201, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 24------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.44 |     96.44 |     96.44 |     96.44
+POSTAG     |     93.96 |     93.96 |     93.96 |     93.96
+case       |     96.78 |     96.78 |     96.78 |     96.78
+vib        |     86.24 |     86.24 |     86.24 |     86.24
+tam        |     86.33 |     86.33 |     86.33 |     86.33
+pers       |     93.51 |     93.51 |     93.51 |     93.51
+gen        |     97.08 |     97.08 |     97.08 |     97.08
+num        |     93.07 |     93.07 |     93.07 |     93.07
+AllTags    |     75.09 |     75.09 |     75.09 |     75.09
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     93.02 |     93.02 |     93.02 |     93.02
+LAS        |     80.96 |     80.96 |     80.96 |     80.96
+CLAS       |     96.99 |     96.61 |     96.80 |     96.61
+MLAS       |     96.12 |     95.74 |     95.93 |     95.74
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 25
+training loss =  tensor(1.3877, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 25------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.43 |     96.43 |     96.43 |     96.43
+POSTAG     |     94.04 |     94.04 |     94.04 |     94.04
+case       |     96.74 |     96.74 |     96.74 |     96.74
+vib        |     86.13 |     86.13 |     86.13 |     86.13
+tam        |     86.27 |     86.27 |     86.27 |     86.27
+pers       |     93.47 |     93.47 |     93.47 |     93.47
+gen        |     97.22 |     97.22 |     97.22 |     97.22
+num        |     93.21 |     93.21 |     93.21 |     93.21
+AllTags    |     75.28 |     75.28 |     75.28 |     75.28
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     93.01 |     93.01 |     93.01 |     93.01
+LAS        |     80.94 |     80.94 |     80.94 |     80.94
+CLAS       |     96.69 |     96.77 |     96.73 |     96.77
+MLAS       |     95.79 |     95.87 |     95.83 |     95.87
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 26
+training loss =  tensor(1.3577, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 26------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.52 |     96.52 |     96.52 |     96.52
+POSTAG     |     94.08 |     94.08 |     94.08 |     94.08
+case       |     96.72 |     96.72 |     96.72 |     96.72
+vib        |     86.21 |     86.21 |     86.21 |     86.21
+tam        |     86.33 |     86.33 |     86.33 |     86.33
+pers       |     93.53 |     93.53 |     93.53 |     93.53
+gen        |     97.09 |     97.09 |     97.09 |     97.09
+num        |     93.10 |     93.10 |     93.10 |     93.10
+AllTags    |     75.10 |     75.10 |     75.10 |     75.10
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     92.68 |     92.68 |     92.68 |     92.68
+LAS        |     80.53 |     80.53 |     80.53 |     80.53
+CLAS       |     96.87 |     96.66 |     96.76 |     96.66
+MLAS       |     96.07 |     95.87 |     95.97 |     95.87
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 27
+training loss =  tensor(1.3362, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 27------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.47 |     96.47 |     96.47 |     96.47
+POSTAG     |     94.09 |     94.09 |     94.09 |     94.09
+case       |     96.70 |     96.70 |     96.70 |     96.70
+vib        |     86.13 |     86.13 |     86.13 |     86.13
+tam        |     86.11 |     86.11 |     86.11 |     86.11
+pers       |     93.46 |     93.46 |     93.46 |     93.46
+gen        |     97.24 |     97.24 |     97.24 |     97.24
+num        |     93.13 |     93.13 |     93.13 |     93.13
+AllTags    |     75.17 |     75.17 |     75.17 |     75.17
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     93.00 |     93.00 |     93.00 |     93.00
+LAS        |     80.88 |     80.88 |     80.88 |     80.88
+CLAS       |     97.05 |     96.58 |     96.81 |     96.58
+MLAS       |     96.01 |     95.55 |     95.78 |     95.55
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 28
+training loss =  tensor(1.2993, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 28------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.40 |     96.40 |     96.40 |     96.40
+POSTAG     |     93.88 |     93.88 |     93.88 |     93.88
+case       |     96.68 |     96.68 |     96.68 |     96.68
+vib        |     86.23 |     86.23 |     86.23 |     86.23
+tam        |     86.28 |     86.28 |     86.28 |     86.28
+pers       |     93.48 |     93.48 |     93.48 |     93.48
+gen        |     97.13 |     97.13 |     97.13 |     97.13
+num        |     93.20 |     93.20 |     93.20 |     93.20
+AllTags    |     75.14 |     75.14 |     75.14 |     75.14
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     93.17 |     93.17 |     93.17 |     93.17
+LAS        |     81.07 |     81.07 |     81.07 |     81.07
+CLAS       |     96.80 |     96.98 |     96.89 |     96.98
+MLAS       |     95.88 |     96.05 |     95.96 |     96.05
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+******************************
+Posdep tagger: Epoch: 29
+training loss =  tensor(1.2687, device='cuda:1', grad_fn=<DivBackward0>)
+Saving adapter weights to ... ./save_dir/hd/xlm-roberta-base/customized/customized.tagger.mdl (47.44 MB)
+------------------------------ Best dev CoNLLu score: epoch 29------------------------------
+Metric     | Precision |    Recall |  F1 Score | AligndAcc
+-----------+-----------+-----------+-----------+-----------
+Tokens     |    100.00 |    100.00 |    100.00 |
+Sentences  |     99.68 |     99.36 |     99.52 |
+Words      |    100.00 |    100.00 |    100.00 |
+CAT        |     96.35 |     96.35 |     96.35 |     96.35
+POSTAG     |     93.95 |     93.95 |     93.95 |     93.95
+case       |     96.69 |     96.69 |     96.69 |     96.69
+vib        |     86.16 |     86.16 |     86.16 |     86.16
+tam        |     86.15 |     86.15 |     86.15 |     86.15
+pers       |     93.34 |     93.34 |     93.34 |     93.34
+gen        |     97.10 |     97.10 |     97.10 |     97.10
+num        |     92.95 |     92.95 |     92.95 |     92.95
+AllTags    |     75.17 |     75.17 |     75.17 |     75.17
+Lemmas     |      0.00 |      0.00 |      0.00 |      0.00
+UAS        |     93.17 |     93.17 |     93.17 |     93.17
+LAS        |     80.88 |     80.88 |     80.88 |     80.88
+CLAS       |     96.89 |     96.56 |     96.72 |     96.56
+MLAS       |     95.93 |     95.60 |     95.77 |     95.60
+BLEX       |      0.00 |      0.00 |      0.00 |      0.00
+
+Loaded 2789 entries from ./dataset/kannada_test.dat
+Tokens 1.0
+Sentences 0.9983873857731589
+Words 1.0
+AllTags 0.7512836834288139
+Lemmas 0.0
+UAS 0.928071292170592
+LAS 0.807893061744112
+CLAS 0.9644343041202523
+MLAS 0.9596027378875319
+BLEX 0.0
+CAT 0.9644387863356673
+POSTAG 0.9421599830256737
+case 0.9654148100997242
+vib 0.8656057712709527
+tam 0.8640780819011246
+pers 0.9323573095692764
+gen 0.973138128580522
+num 0.9286653935921918
+Loaded 2789 entries from ./dataset/kannada_test.dat
+Tokens 1.0
+Sentences 0.9983873857731589
+Words 1.0
+AllTags 0.7512836834288139
+Lemmas 0.0
+UAS 0.928071292170592
+LAS 0.807893061744112
+CLAS 0.9644343041202523
+MLAS 0.9596027378875319
+BLEX 0.0
+CAT 0.9644387863356673
+POSTAG 0.9421599830256737
+case 0.9654148100997242
+vib 0.8656057712709527
+tam 0.8640780819011246
+pers 0.9323573095692764
+gen 0.973138128580522
+num 0.9286653935921918

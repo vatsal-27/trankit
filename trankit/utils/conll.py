@@ -86,6 +86,7 @@ class CoNLL:
         for sent_conll in doc_conll:
             sent_dict = []
             for token_conll in sent_conll:
+                #print(token_conll)
                 token_dict = CoNLL.convert_conll_token(token_conll)
                 sent_dict.append(token_dict)
             doc_dict.append(sent_dict)

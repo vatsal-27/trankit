@@ -1,5 +1,5 @@
 from . import *
-from ..utils.lfs import get_lfs_scores
+from ..utils.lfs import get_lfs_scores_all_tags
 # for sents
 instance_fields = [
     'sent_index',
@@ -376,10 +376,37 @@ class TaggerDataset(Dataset):
             label_fn_labels = []
             label_fn_scores = []
             for i in range(len(inst[LEMMA])):
-                x,y = get_lfs_scores(inst["tam"][i],inst["tam"][int(inst[HEAD][i])-1],self.config.df)
+                if(integrate_spear):
+                    lemma = inst[LEMMA][i]
+                    category = inst[UPOS][i]
+                    postag = inst[XPOS][i]
+                    gen = inst['gen'][i]
+                    num = inst['num'][i]
+                    pers = inst['pers'][i]
+                    case = inst['case'][i]
+                    vib = inst['vib'][i]
+                    tam = inst['tam'][i]
+                    # stype = inst['stype'][i]
+                    # voicetype = inst['voicetype'][i]
+                    j = int(inst[HEAD][i])-1
+                    lemma2 = inst[LEMMA][j]
+                    category2 = inst[UPOS][j]
+                    postag2 = inst[XPOS][j]
+                    gen2 = inst['gen'][j]
+                    num2 = inst['num'][j]
+                    pers2 = inst['pers'][j]
+                    case2 = inst['case'][j]
+                    vib2 = inst['vib'][j]
+                    tam2 = inst['tam'][j]
+                    # stype2 = inst['stype'][j]
+                    # voicetype2 = inst['voicetype'][j]
+                    # x,y = get_lfs_scores_all_tags(self.config.df,lemma,category,postag, gen,num,pers,case,vib,tam,stype,voicetype,lemma2,category2,postag2, gen2,num2,pers2,case2,vib2,tam2,stype2,voicetype2)
+                    x,y = get_lfs_scores_all_tags(self.config.df,postag,postag2,category,gen,num,pers,case,vib,tam,category2, gen2,num2,pers2,case2,vib2,tam2)
+
+                # x,y = get_lfs_scores(inst["tam"][i],inst["tam"][int(inst[HEAD][i])-1],self.config.df)
                 
-                label_fn_labels += [x]
-                label_fn_scores += [y]
+                    label_fn_labels += [x]
+                    label_fn_scores += [y]
 
             args = [
                 inst['sent_index'],

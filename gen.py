@@ -1,8 +1,8 @@
 from ctypes.wintypes import WPARAM
 
 
-file1 = "./kannada_dev.dat"
-file2 = "./kannada_train.txt"
+file1 = "./hindi_dev.dat"
+file2 = "./hindi_train.txt"
 
 with open(file1) as f:
     L = f.readlines()
